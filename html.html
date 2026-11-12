@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aarav Mehta | Web Developer Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Our stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header class="site-header">
+    <a href="#home" class="logo">aarav.dev</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">Menu</button>
+
+    <nav class="nav" id="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch light or dark theme">Dark</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO SECTION (2-Column Layout to fill the right side) ========== -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>I build websites that <span id="typed" class="typed"></span></h1>
+        <p class="hero-text">
+          Hi, I'm Aarav, a first-year BCA student who loves turning
+          ideas into clean, fast and friendly web pages.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">See my work</a>
+          <a href="#contact" class="btn btn-ghost">Say hello</a>
+        </div>
+      </div>
+
+      <!-- Right Side Visual Element: Interactive Dev Terminal Card -->
+      <div class="hero-card-visual">
+        <div class="code-window">
+          <div class="window-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="window-title">portfolio.js</span>
+          </div>
+          <pre class="code-body"><code><span class="keyword">const</span> developer = {
+  name: <span class="string">"Aarav Mehta"</span>,
+  role: <span class="string">"BCA Student & Dev"</span>,
+  stack: [<span class="string">"HTML"</span>, <span class="string">"CSS"</span>, <span class="string">"JS"</span>],
+  status: <span class="string">"Ready to code"</span>
+};
+
+<span class="keyword">function</span> <span class="function">init</span>() {
+  console.log(<span class="string">"Welcome to my portfolio!"</span>);
+}
+init();</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT + SKILLS SECTION ========== -->
+    <section class="section" id="about">
+      <h2>About me</h2>
+      <div class="about-grid">
+        <p>
+          I'm studying web design and development and I enjoy the full journey:
+          sketching a layout, writing the code and watching it come alive in the
+          browser. When I'm not coding, I'm usually sketching interfaces or
+          playing chess.
+        </p>
+
+        <ul class="skills">
+          <li>
+            <div class="skill-label"><span>HTML</span><span>90%</span></div>
+            <div class="bar"><div class="bar-fill" data-level="90"></div></div>
+          </li>
+          <li>
+            <div class="skill-label"><span>CSS</span><span>80%</span></div>
+            <div class="bar"><div class="bar-fill" data-level="80"></div></div>
+          </li>
+          <li>
+            <div class="skill-label"><span>JavaScript</span><span>65%</span></div>
+            <div class="bar"><div class="bar-fill" data-level="65"></div></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+
+      <div class="filters" id="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="web">Websites</button>
+        <button class="filter" data-filter="app">Apps</button>
+      </div>
+
+      <div class="cards" id="cards">
+        <article class="card" data-category="web">
+          <h3>PrivaLens</h3>
+          <p>A light weight browser agent that can perform tasks on you behalf and maintain you privacy at the same time.</p>
+          <span class="tag">DOM</span> <span class="tag">LLM</span>
+        </article>
+
+        <article class="card" data-category="app">
+          <h3>CivicPulse</h3>
+          <p>An integrated platform for people to engage with authorities and report issues.</p>
+          <span class="tag">JavaScript</span> <span class="tag">HTML</span>
+        </article>
+
+        <article class="card" data-category="web">
+          <h3>PhishTrap</h3>
+          <p>A smart agent that detects and blocks phishing attempts.</p>
+          <span class="tag">HTML</span> <span class="tag">JavaScript</span>
+        </article>
+
+        <article class="card" data-category="app">
+          <h3>Cyber Lumina</h3>
+          <p>A single, privacy-first website where students, senior citizens, shoppers and small businesses check suspicious payments, messages, emails, links and documents, then get a clear risk level and safe next steps.</p>
+          <span class="tag">JavaScript</span> <span class="tag">DOM</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+
+      <form class="form" id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+        <small class="error" id="nameError"></small>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com">
+        <small class="error" id="emailError"></small>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="What would you like to build?"></textarea>
+        <small class="error" id="messageError"></small>
+
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-success" id="formSuccess" role="status"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p>Made by Aarav Mehta for the Web Design and Development assessment.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
